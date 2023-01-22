@@ -1,16 +1,12 @@
 
 function scrollValue() {
     var navbar = document.getElementById('navbar');
-    var navbarImg = document.getElementById('navBarImg');
     var scroll = window.scrollY;
     if (scroll < 200) {
         navbar.classList.remove('BgColour');
-        navbarImg.classList.remove('bg-opacity-25');
-        navbarImg.classList.remove('bg-light');
+
     } else {
         navbar.classList.add('BgColour');
-        navbarImg.classList.add('bg-opacity-25');
-        navbarImg.classList.add('bg-light');
 
     }
 }
