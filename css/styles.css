@@ -9,3 +9,9 @@
     background-color: #5f6a2d;
     border-color: #5f6a2d;
 }
+.nav-link {
+    color: white;
+}
+.nav-link:hover {
+    color: #5f6a2d;
+}
