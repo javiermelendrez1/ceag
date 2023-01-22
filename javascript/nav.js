@@ -12,6 +12,24 @@ function scrollValue() {
 }
 
 window.addEventListener('scroll', scrollValue);
+function sendMail() {
+    var params = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+    const serviceId = 'service_2m23p7o';
+    const templateId = 'template_x34mbk6';
+    console.log((params))
+    emailjs.send(serviceId, templateId, params).then(function (res) {
+        alert('Email Sent');
+    });
+    document.getElementById('firstName').value = '';
+    document.getElementById('lastName').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+};
 
 window.onload = function () {
     const copyright = document.getElementById('copyright');
@@ -27,21 +45,13 @@ window.onload = function () {
             navbar.classList.add('BgColour');
         }
     })
-    
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        sendMail();
+    });
 };
 
 
 
-function sendMail() {
-    var params = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').valu
-    };
-    const serviceId = 'service_2m23p7o';
-    const templateId = 'template_x34mbk6';
-    emailjs.send(serviceId, templateId, params).then(function (res) {
-        alert('Email Sent');
-        });
-};
+
