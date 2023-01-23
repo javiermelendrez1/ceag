@@ -34,7 +34,7 @@ function sendMail() {
 window.onload = function () {
     const copyright = document.getElementById('copyright');
     console.log(copyright);
-    copyright.textContent = `© ${new Date().getFullYear()} CEAG Electric Company, Inc`
+    copyright.textContent = `© ${new Date().getFullYear()} CEAG Electric Company`
 
     const button = document.getElementById('menuButton');
     button.addEventListener('click', function () {
